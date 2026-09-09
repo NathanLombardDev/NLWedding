@@ -54,9 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
             hasAvailable = true;
             const card = document.createElement('div');
             card.className = 'registry-item';
+            const linkHTML = item.link ? `<a class="registry-link" href="${item.link}" target="_blank" rel="noopener noreferrer">View item</a>` : '';
             card.innerHTML = `
                 <h4>${item.name}</h4>
                 <p>${item.description || ''}</p>
+                ${linkHTML}
                 <button class="claim-btn" data-id="${key}" data-name="${item.name}">I'll get this</button>
             `;
             registryList.appendChild(card);
